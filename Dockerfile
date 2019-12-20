@@ -5,10 +5,10 @@ MAINTAINER ali.raza
 ENV ZOOKEEPER_VERSION 3.4.14
 
 #Download Zookeeper
-RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz && \
+RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz && \
 wget -q https://www.apache.org/dist/zookeeper/KEYS && \
-wget -q https://www.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz.asc && \
-wget -q https://www.apache.org/dist/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz.md5
+wget -q https://www.apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz.asc && \
+wget -q https://www.apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz.md5
 
 #Verify download
 RUN md5sum -c zookeeper-3.4.14.tar.gz.md5 && \
@@ -19,7 +19,7 @@ gpg --verify zookeeper-3.4.14.tar.gz.asc
 RUN tar -xzf zookeeper-3.4.14.tar.gz -C /opt
 
 #Configure
-RUN mv /opt/zookeeper-3.4.14/conf/zoo_sample.cfg /opt/zookeeper-${ZOOKEEPER_VERSION}/conf/zoo.cfg
+RUN mv /opt/zookeeper-3.4.14/conf/zoo_sample.cfg /opt/zookeeper-3.4.14/conf/zoo.cfg
 
 ENV JAVA_HOME /usr/lib/jvm/java-7-openjdk-amd64
 ENV ZK_HOME /opt/zookeeper-3.4.14
