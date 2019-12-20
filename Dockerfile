@@ -2,7 +2,7 @@ FROM aliirz/base
 
 MAINTAINER ali.raza
 
-ENV ZOOKEEPER_VERSION 3.4.14
+ENV ZOOKEEPER_VERSION 3.4.13
 
 #Download Zookeeper
 RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-${ZOOKEEPER_VERSION}/zookeeper-${ZOOKEEPER_VERSION}.tar.gz && \
