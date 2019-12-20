@@ -5,15 +5,12 @@ MAINTAINER ali.raza
 ENV ZOOKEEPER_VERSION 3.4.14
 
 #Download Zookeeper
-RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz && \
-wget -q https://www.apache.org/dist/zookeeper/KEYS && \
-wget -q https://www.apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz.asc && \
-wget -q https://www.apache.org/dist/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz.md5
+RUN wget -q http://mirror.vorboss.net/apache/zookeeper/zookeeper-3.4.14/zookeeper-3.4.14.tar.gz
 
 #Verify download
-RUN md5sum -c zookeeper-3.4.14.tar.gz.md5 && \
-gpg --import KEYS && \
-gpg --verify zookeeper-3.4.14.tar.gz.asc
+# RUN md5sum -c zookeeper-3.4.14.tar.gz.md5 && \
+# gpg --import KEYS && \
+# gpg --verify zookeeper-3.4.14.tar.gz.asc
 
 #Install
 RUN tar -xzf zookeeper-3.4.14.tar.gz -C /opt
